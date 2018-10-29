@@ -29,6 +29,7 @@ Value02: str
 
 if len(sys.argv) == 2:
     ipaddress = sys.argv[1]
+    ipaddress = "46.37.6.106"
     # sysDescr
     (Useless, Valore_1) = str(walk(ipaddress, '1.3.6.1.2.1.1.1')).split(' = ')
 
