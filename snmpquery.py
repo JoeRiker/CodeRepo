@@ -29,14 +29,15 @@ Value02: str
 
 if len(sys.argv) == 2:
     ipaddress = sys.argv[1]
-    ipaddress = "46.37.6.106"
-    # sysDescr
-    (Useless, Valore_1) = str(walk(ipaddress, '1.3.6.1.2.1.1.1')).split(' = ')
+else:
+    ipaddress = "127.0.0.1"
+# sysDescr
+(Useless, Valore_1) = str(walk(ipaddress, '1.3.6.1.2.1.1.1')).split(' = ')
+print(Valore_1)
+# sysUpTime
+(Useless, Valore_2) = str(walk(ipaddress, '1.3.6.1.2.1.1.3')).split(' = ')
+# print(ipaddress)
+print("Uptime: " + str(int(Valore_2) / 100) + " Secondi")
 
-    # sysUpTime
-    (Useless, Valore_2) = str(walk(ipaddress, '1.3.6.1.2.1.1.3')).split(' = ')
-    # print(ipaddress)
-    print("Uptime: " + str(int(Valore_2) / 100) + " Secondi")
-
-    # Scrive tutto (invertire nella funzione il commento da print a return).
-    # print(str(walk('ipaddress', '1.3.6.1.2.1.1.1')))
+# Scrive tutto (invertire nella funzione il commento da print a return).
+# print(str(walk('ipaddress', '1.3.6.1.2.1.1.1')))
